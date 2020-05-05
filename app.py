@@ -349,6 +349,12 @@ def predict():
             banking = 100
             flag = True
     
+    #CIBIL score is >600:        
+    if not flag:
+        if (int(cibil)>600):
+            banking = 100
+            flag = True
+    
     #<3 months old bank account or <1 time ABB or <2 yrs in Rented House
     if not flag:
         if ((emi < int(clobal)) | (int(bank) < 3) | ((int(resi) == 2756) & (int(year) < 2))):
